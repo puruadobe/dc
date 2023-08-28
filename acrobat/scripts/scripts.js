@@ -314,34 +314,3 @@ const { ietf } = getLocale(locales);
     }
   }, 1000);
 }());
-
-//Branch app banner code
-var initBranch = false;
-
-const initBranchFn = () => {
-  const branchPromise = import(`https://cdn.branch.io/branch-latest.min.js`);
-      if (initBranch) {
-          return;
-      }
-      init = true;
-
-      (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-      var privacyConsent = !!window.adobePrivacy && window.adobePrivacy.hasUserProvidedConsent()
-      window.branchPromise = new Promise(function(resolve, reject) {
-        branch.init('key_live_pbKc1OdmiXCZnwq34n7rIpjfrtphZEln',{
-          'tracking_disabled' : !privacyConsent },function(err,data){ if (err){reject(Error("Branch couldn't be initialized"));}  else {resolve("Branch initialised");}  });
-        var linkData = {tags: ['https://mwpw-123236--dc--adobecom.hlx.page/drafts/doreswam/word-to-pdf']};
-        branch.setBranchViewData(linkData);
-      });
-  }
-
-  if(window.browser.isMobile){
-    initBranchFn();
-    ['adobePrivacy:PrivacyConsent', 'adobePrivacy:PrivacyReject', 'adobePrivacy:PrivacyCustom']
-        .forEach(function (event) {
-            window.addEventListener(event, initBranchFn);
-    });
-} 
-
-
-
