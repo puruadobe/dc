@@ -316,7 +316,7 @@ const { ietf } = getLocale(locales);
 }());
 
 //Branch app banner code
-//const { default: branchScript } = await import(`https://cdn.branch.io/branch-latest.min.js`);
+const { default: branchScript } = await import(`https://cdn.branch.io/branch-latest.min.js`);
 var initBranch = false;
 
 const initBranchFn = () => {
