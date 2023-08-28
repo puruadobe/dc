@@ -19,29 +19,29 @@ async function getCspEnv() {
 }
 
 export default async function ContentSecurityPolicy() {
-  const { default: ENV } = await getCspEnv();
+  // const { default: ENV } = await getCspEnv();
 
-  const theCSP = `child-src ${ENV.childSrc.join(' ')}\
-  connect-src ${ENV.connectSrc.join(' ')}\
-  default-src ${ENV.defaultSrc.join(' ')}\
-  font-src ${ENV.fontSrc.join(' ')}\
-  form-action ${ENV.formAction.join(' ')}\
-  frame-src ${ENV.frameSrc.join(' ')}\
-  img-src ${ENV.imgSrc.join(' ')}\
-  manifest-src ${ENV.manifestSrc.join(' ')}\
-  script-src ${ENV.scriptSrc.join(' ')}\
-  style-src ${ENV.styleSrc.join(' ')}\
-  worker-src ${ENV.workerSrc.join(' ')}`;
+  // const theCSP = `child-src ${ENV.childSrc.join(' ')}\
+  // connect-src ${ENV.connectSrc.join(' ')}\
+  // default-src ${ENV.defaultSrc.join(' ')}\
+  // font-src ${ENV.fontSrc.join(' ')}\
+  // form-action ${ENV.formAction.join(' ')}\
+  // frame-src ${ENV.frameSrc.join(' ')}\
+  // img-src ${ENV.imgSrc.join(' ')}\
+  // manifest-src ${ENV.manifestSrc.join(' ')}\
+  // script-src ${ENV.scriptSrc.join(' ')}\
+  // style-src ${ENV.styleSrc.join(' ')}\
+  // worker-src ${ENV.workerSrc.join(' ')}`;
 
-  const head = document.querySelector('head');
-  const cspElement = document.createElement('meta');
-  cspElement.setAttribute('http-equiv', 'Content-Security-Policy');
-  cspElement.setAttribute('content', theCSP);
-  head.appendChild(cspElement);
+  // const head = document.querySelector('head');
+  // const cspElement = document.createElement('meta');
+  // //cspElement.setAttribute('http-equiv', 'Content-Security-Policy');
+  // cspElement.setAttribute('content', theCSP);
+  // head.appendChild(cspElement);
 
-  // Content Security Policy Logging
-  window.cspErrors = [];
-  document.addEventListener("securitypolicyviolation", (e) => {
-    cspErrors.push(`${e.violatedDirective} violation ¶ Refused to load content from ${e.blockedURI}`);
-  });
+  // // Content Security Policy Logging
+  // window.cspErrors = [];
+  // document.addEventListener("securitypolicyviolation", (e) => {
+  //   cspErrors.push(`${e.violatedDirective} violation ¶ Refused to load content from ${e.blockedURI}`);
+  // });
 }
