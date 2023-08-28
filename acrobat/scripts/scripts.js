@@ -335,7 +335,7 @@ const initBranchFn = () => {
       });
   }
 
-  if(true){
+  if(window.browser.isMobile){
     initBranchFn();
     ['adobePrivacy:PrivacyConsent', 'adobePrivacy:PrivacyReject', 'adobePrivacy:PrivacyCustom']
         .forEach(function (event) {
