@@ -330,7 +330,7 @@ const initBranchFn = () => {
       window.branchPromise = new Promise(function(resolve, reject) {
         branch.init('key_live_pbKc1OdmiXCZnwq34n7rIpjfrtphZEln',{
           'tracking_disabled' : !privacyConsent },function(err,data){ if (err){reject(Error("Branch couldn't be initialized"));}  else {resolve("Branch initialised");}  });
-        var linkData = {tags: ['https://mwpw-123236--dc--adobecom.hlx.page/drafts/doreswam/word-to-pdf']};
+        var linkData = {tags: ['https://mwpw-123236--dc--puruadobe.hlx.page/drafts/doreswam/word-to-pdf']};
         branch.setBranchViewData(linkData);
       });
   }
