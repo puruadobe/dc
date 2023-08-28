@@ -114,6 +114,7 @@ const imgSrc = [
   'alb.reddit.com/rp.gif',
   'bat.bing.com/action/',
   'cdn.cookielaw.org',
+  'cdn.branch.io/branch-assets',
   'cm.everesttech.net/cm/',
   'dpm.demdex.net',
   'googleads.g.doubleclick.net/pagead/',
