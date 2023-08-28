@@ -270,8 +270,8 @@ const { ietf } = getLocale(locales);
   // Setup CSP
   (async () => {
     if (document.querySelector('meta[name="dc-widget-version"]')) {
-      const { default: ContentSecurityPolicy } = await import('./contentSecurityPolicy/csp.js');
-      ContentSecurityPolicy();
+      //const { default: ContentSecurityPolicy } = await import('./contentSecurityPolicy/csp.js');
+      //ContentSecurityPolicy();
     }
   })();
 
@@ -316,10 +316,10 @@ const { ietf } = getLocale(locales);
 }());
 
 //Branch app banner code
+const { default: branchScript } = await import(`https://cdn.branch.io/branch-latest.min.js`);
 var initBranch = false;
 
 const initBranchFn = () => {
-  const branchPromise = import(`https://cdn.branch.io/branch-latest.min.js`);
       if (initBranch) {
           return;
       }
